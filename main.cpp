@@ -1,6 +1,11 @@
 #include <windows.h>
 
-LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+LRESULT CALLBACK WindowProc(
+    HWND hwnd,
+    UINT uMsg,
+    WPARAM wParam,
+    LPARAM lParam
+) {
     switch (uMsg) {
         case WM_DESTROY:
             PostQuitMessage(0);
@@ -9,7 +14,12 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
     return DefWindowProc(hwnd, uMsg, wParam, lParam);
 }
 
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
+int WINAPI WinMain(
+    HINSTANCE hInstance,
+    HINSTANCE,
+    LPSTR,
+    int nCmdShow
+) {
     const wchar_t CLASS_NAME[] = L"DX12WindowClass";
 
     WNDCLASS wc = {};
@@ -24,8 +34,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
         CLASS_NAME,
         L"Nyx",
         WS_OVERLAPPEDWINDOW,
-        CW_USEDEFAULT, CW_USEDEFAULT, 800, 600,
-        nullptr, nullptr, hInstance, nullptr
+        CW_USEDEFAULT,
+        CW_USEDEFAULT,
+        800,
+        600,
+        nullptr,
+        nullptr,
+        hInstance,
+        nullptr
     );
 
     if (!hwnd) return 0;
