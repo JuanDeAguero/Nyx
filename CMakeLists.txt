@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.15)
+project(Nyx)
+set(CMAKE_CXX_STANDARD 17)
+add_executable(Nyx WIN32 main.cpp)
+target_compile_definitions(Nyx PRIVATE UNICODE _UNICODE)
+target_link_libraries(Nyx user32)
